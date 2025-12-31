@@ -184,11 +184,7 @@
 <body>
   <aside class="sidebar">
     <h2>Notifications</h2>
-    <div class="notifications">
-      <div class="notification-item">📢 Welcome back!</div>
-      <div class="notification-item">✅ Your account is secure</div>
-      <div class="notification-item">📩 New message received</div>
-    </div>
+    <div class="notifications" id="notifications"></div>
   </aside>
 
   <main class="main">
@@ -263,5 +259,23 @@
       }
     });
   </script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script>
+const db = firebase.firestore();
+const notificationsEl = document.getElementById("notifications");
+
+db.collection("announcements")
+  .orderBy("timestamp", "desc")
+  .limit(10)
+  .onSnapshot(snapshot => {
+    notificationsEl.innerHTML = "";
+    snapshot.forEach(doc => {
+      const div = document.createElement("div");
+      div.className = "notification-item";
+      div.textContent = "📢 " + doc.data().message;
+      notificationsEl.appendChild(div);
+    });
+  });
+</script>
 </body>
 </html>
