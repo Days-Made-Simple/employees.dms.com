@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phishing Assessment Notice</title>
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      --card-bg: #ffffff;
+      --primary: #e63946;
+      --secondary: #457b9d;
+      --text-dark: #1d3557;
+      --text-muted: #6c757d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      max-width: 520px;
+      width: 100%;
+      padding: 40px 36px;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .alert {
+      margin: 24px 0;
+      padding: 16px;
+      border-radius: 10px;
+      background: #f8d7da;
+      color: #842029;
+      font-weight: 500;
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">⚠️</div>
+
+    <h1>This was an employee phishing assessment.</h1>
+
+    <div class="alert">
+      You have logged in. This means you have failed the test.
+    </div>
+
+    <p>
+      Please remain more mindful in the future.
+    </p>
+
+    <div class="footer">
+      Information Security Awareness Training
+    </div>
+  </div>
+</body>
+</html>
