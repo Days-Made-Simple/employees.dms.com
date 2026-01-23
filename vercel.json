@@ -9,8 +9,8 @@
   "routes": [
     { "src": "/", "dest": "/public/employeelogin.html" },
     { "src": "/resetpw", "dest": "/public/forgotpassword.html" },
-    { "src": "/dashboard", "dest": "/public/employeedashboard.html" }
-    { "src": "/assessments/phishalert", "dest": "/public/assessments/phishingalert.html" }
+    { "src": "/dashboard", "dest": "/public/employeedashboard.html" },
+    { "src": "/assessments/phishalert", "dest": "/public/assessments/phishingalert.html" },
     { "src": "/assessments/phishlogin", "dest": "/public/assessments/phishinglogin.html" }
   ]
 }
