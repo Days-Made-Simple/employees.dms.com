@@ -77,6 +77,26 @@
       color: #999;
     }
 
+    .confirm-btn {
+      margin-top: 18px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: none;
+      background: #1d3557;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+   }
+
+.confirm-btn:hover {
+  background: #16304f;
+}
+
+.confirm-btn:active {
+  transform: translateY(1px);
+}
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -103,9 +123,48 @@
       Please remain more mindful in the future.
     </p>
 
+    <button class="confirm-btn" onclick="goToDashboard()">
+      I understand
+    </button>
+
     <div class="footer">
       Information Security Awareness Training
     </div>
   </div>
+
+  <!-- 🔹 Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyC6ReZ9JiKAhVwXLUwgzRRsk2Daw3pRli8",
+      authDomain: "daysmadesimple-admin.firebaseapp.com",
+      projectId: "daysmadesimple-admin",
+      storageBucket: "daysmadesimple-admin.firebasestorage.app",
+      messagingSenderId: "165327565681",
+      appId: "1:165327565681:web:e28364ebb3cb1d9a683cd0"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // 🔐 Auth gate
+    auth.onAuthStateChanged(user => {
+      if (!user) {
+        // Not logged in → kick out
+        window.location.replace("/");
+      } else {
+        // Logged in → show page
+        document.body.style.display = "flex";
+      }
+    });
+
+    function goToDashboard() {
+      window.location.replace("/dashboard");
+    }
+
+  </script>
+  
 </body>
 </html>
