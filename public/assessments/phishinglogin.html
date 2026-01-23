@@ -16,7 +16,7 @@
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
 
-  const DASHBOARD_URL = "/assessments/phishingalert.html"; // <-- change if needed
+  const DASHBOARD_URL = "/assessments/phishalert"; // <-- change if needed
 
   // 🔹 Redirect when authenticated (covers refresh + all login types)
   auth.onAuthStateChanged(user => {
